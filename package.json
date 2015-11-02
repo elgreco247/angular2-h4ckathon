@@ -1,0 +1,20 @@
+{
+  "name": "angular2-h4ckathon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AOEpeople/angular2-h4ckathon"
+  },
+  "keywords": [],
+  "author": "AOE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AOEpeople/angular2-h4ckathon/issues"
+  },
+  "homepage": "https://github.com/AOEpeople/angular2-h4ckathon"
+}
