@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/AOEpeople/angular2-h4ckathon/issues"
   },
-  "homepage": "https://github.com/AOEpeople/angular2-h4ckathon"
+  "homepage": "https://github.com/AOEpeople/angular2-h4ckathon",
+  "devDependencies": {
+    "angular2": "^2.0.0-alpha.45"
+  }
 }
