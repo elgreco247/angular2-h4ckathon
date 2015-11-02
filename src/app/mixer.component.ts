@@ -1,5 +1,5 @@
 import {Component,NgFor} from 'angular2/angular2';
-import {NavBarComponent} from './navbar.component';
+// import {NavBarComponent} from './navbar.component';
 import {SliderComponent} from './slider.component';
 
 @Component({
@@ -12,7 +12,7 @@ import {SliderComponent} from './slider.component';
     
     </div>
     `,
-  directives: [NgFor, NavBarComponent, SliderComponent]
+  directives: [NgFor, SliderComponent]
 })
 export class MixerComponent  {
   public title = 'hello world';
