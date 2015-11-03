@@ -1,25 +1,47 @@
 import {Component,NgFor} from 'angular2/angular2';
 // import {NavBarComponent} from './navbar.component';
 import {SliderComponent} from './slider.component';
+import {DatenturboComponent} from './datenturbo.component';
+import {OptionService} from './option.service';
 
 @Component({
   selector: 'mixer',
   template: `
-    
-    <div class="panel panel-default">
-    
-      <slider *ng-for="#og of optiongroups" [option-group]="og"></slider>
-    
+    <div class="container">
+    <div class="col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-heading">Mixer</div>
+      <div class="panel-body">
+        <slider *ng-for="#availableOption of availableOptions" [available-option]="availableOption" [datenturbo]="datenturbo"></slider>
+        <datenturbo [enabled]="datenturbo" (toggle)="toggleDatenturbo()"></datenturbo>
+      </div>
+      </div>
+    </div>
     </div>
     `,
-  directives: [NgFor, SliderComponent]
+  directives: [NgFor, SliderComponent, DatenturboComponent]
 })
 export class MixerComponent  {
-  public title = 'hello world';
-  public optiongroups:Array<IOptionGroup> = [];
-  constructor() {
-    this.optiongroups[0] = {name:'SMS', value:50};
-    this.optiongroups[1] = {name:'Surf',value:100};
-    this.optiongroups[2] = {name:'Min',value:300};
+  private availableOptions:Array<IAvailableOption> = [];
+  private datenturbo:Boolean = false;
+  
+  constructor(private optionservice:OptionService) {
+    this.availableOptions = this.optionservice.getAvailableOptions();
   }
+  
+  toggleDatenturbo() {
+    this.datenturbo = !this.datenturbo;
+  }
+  
+}
+
+interface IAvailableOption {
+	name:String,
+	values:Array<Number>,
+  datenturbo?:Boolean
+}
+
+interface IOption {
+	name: String,
+	value: Number
 }
