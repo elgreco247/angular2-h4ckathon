@@ -19,11 +19,9 @@ import {OptionService} from './option.service';
 	directives: []
 })
 export class SliderComponent {
-	@Input('available-option')
-	public availableOption:IAvailableOption;
+	@Input('available-option') availableOption:IAvailableOption;
 	
-	@Input('datenturbo')
-	public datenturbo:Boolean;
+	@Input('datenturbo') datenturbo:Boolean;
 	
 	private currentOption:IOption;
 	
@@ -33,7 +31,7 @@ export class SliderComponent {
 		this.doUpdate(0);
 	}
 	
-	getIndexForCurrentOption():Number {
+	getIndexForCurrentOption():number {
 		let index = 0;
 		for(let i=0; i<this.availableOption.values.length; i++) {
 			
@@ -41,11 +39,11 @@ export class SliderComponent {
 		return index;
 	}
 	
-	doUpdate(newvalue:Number) {
+	doUpdate(newvalue:number) {
 		this.currentOption = this.optionService.getOptionForIndex(this.availableOption, newvalue);
 	}
 	
-	isShowSlider():Boolean {
+	isShowSlider():boolean {
 		if(this.availableOption.datenturbo==null) {
 			return false;
 		} 
@@ -58,14 +56,3 @@ export class SliderComponent {
 		return true;
 	}
 } 
-
-interface IAvailableOption {
-	name:String,
-	values:Array<Number>,
-	datenturbo?:Boolean
-}
-
-interface IOption {
-	name: String,
-	value: Number
-}

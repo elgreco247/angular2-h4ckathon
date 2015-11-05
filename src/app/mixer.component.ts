@@ -23,7 +23,7 @@ import {OptionService} from './option.service';
 })
 export class MixerComponent  {
   private availableOptions:Array<IAvailableOption> = [];
-  private datenturbo:Boolean = false;
+  private datenturbo:boolean = false;
   
   constructor(private optionservice:OptionService) {
     this.availableOptions = this.optionservice.getAvailableOptions();
@@ -33,15 +33,4 @@ export class MixerComponent  {
     this.datenturbo = !this.datenturbo;
   }
   
-}
-
-interface IAvailableOption {
-	name:String,
-	values:Array<Number>,
-  datenturbo?:Boolean
-}
-
-interface IOption {
-	name: String,
-	value: Number
 }

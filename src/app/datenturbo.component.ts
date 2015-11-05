@@ -14,10 +14,10 @@ import {Component, Input, Output, EventEmitter} from 'angular2/angular2';
 	`
 })
 export class DatenturboComponent {
-	@Input('enabled') enabled: Boolean;
+	@Input('enabled') enabled: boolean;
 	@Output() toggle: EventEmitter = new EventEmitter();
 	
 	onChanged() {
-		this.toggle.next();
+		this.toggle.next(null);
 	}
 }

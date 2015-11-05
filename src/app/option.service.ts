@@ -10,22 +10,11 @@ export class OptionService {
 		];
 	}
 	
-	getOptionForIndex(availableOption: IAvailableOption, index: Number) : IOption {
+	getOptionForIndex(availableOption: IAvailableOption, index: number) : IOption {
 		return {
 			name: availableOption.name,
 			value: availableOption.values[index]
 		};
 	}
 	
-}
-
-interface IAvailableOption {
-	name:String,
-	values:Array<Number>,
-	datenturbo?:Boolean
-}
-
-interface IOption {
-	name: String,
-	value: Number
 }
